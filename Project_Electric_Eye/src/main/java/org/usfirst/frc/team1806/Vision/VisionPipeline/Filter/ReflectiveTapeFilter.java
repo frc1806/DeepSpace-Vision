@@ -205,11 +205,11 @@ public class ReflectiveTapeFilter implements Filter{
 
     @Override
     public void configureCamera(VideoCapture camera){
-        camera.set(Videoio.CAP_PROP_BRIGHTNESS, 0.0);
-        camera.set(Videoio.CAP_PROP_EXPOSURE, 0.0);
-        camera.set(Videoio.CAP_PROP_FPS, 30);
-        //camera.set(Videoio.CAP_PROP_FRAME_WIDTH, 1920);
-        //camera.set(Videoio.CAP_PROP_FRAME_HEIGHT, 1080);
+        camera.set(Videoio.CAP_PROP_BRIGHTNESS, 0.05);
+        camera.set(Videoio.CAP_PROP_EXPOSURE, 0.05);
+        camera.set(Videoio.CAP_PROP_FPS, 60);
+        camera.set(Videoio.CAP_PROP_FRAME_WIDTH, 960);
+        camera.set(Videoio.CAP_PROP_FRAME_HEIGHT, 540);
     }
 
 

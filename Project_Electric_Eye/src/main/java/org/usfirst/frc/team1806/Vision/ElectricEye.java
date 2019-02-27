@@ -3,6 +3,7 @@ package org.usfirst.frc.team1806.Vision;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ConcurrentHashMap;
 
 import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.MjpegServer;
@@ -10,6 +11,9 @@ import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
+import org.opencv.video.Video;
 import org.opencv.videoio.VideoCapture;
 
 import org.usfirst.frc.team1806.Vision.Util.*;
@@ -27,6 +31,11 @@ public class ElectricEye {
 
     private static Mat matA;
     private static Mat matB;
+
+    private static Thread processThread;
+    private static Thread streamThread;
+    private static Thread acquisitionThreadA;
+    private static Thread acquisitionThreadB;
 
 
     public static boolean shouldRun = true;
@@ -127,46 +136,8 @@ public class ElectricEye {
 
     private static Timer timer;
 
-    private static TimerTask mTimerTask = new TimerTask() {
-        @Override
-        public void run() {
-           // System.out.println("start of loop");
-            if(!isEitherCaptureNull() && videoCaptureA.isOpened()){
-                if(processCamera.cameraID == streamCamera.cameraID){
-                    //matA = new Mat();
-                    videoCaptureA.read(matA);
-                    processImage(matA);
-                    streamImage(matA);
-                    if(processCamera.getIsFlipped()){
-                        //matA.release();
-                    }
 
-                }
-                else{
-                    //matA = new Mat();
-                    videoCaptureA.read(matA);
-                    //System.out.println("After read");
-                    processImage(matA);
-                    //System.out.println("after process");
-                    if(streamCamera != StreamCamera.VISION_POST_PROCESSING){
-                        //System.out.println("lol whut");
-                        matB = new Mat();
-                        videoCaptureB.read(matB);
-                        streamImage(matB);
-                       // matB.release();
-                    }
-                    else{
-                        streamImage(overlayInfo(matA));
-                        //System.out.println("after stream process");
-                    }
-                    if(processCamera.getIsFlipped()){
-                        //matA.release();
-                    }
 
-                }
-            }
-        }
-    };
 
     public static void main(String[] args) {
         visionMode = VisionMode.MODE_REFLECTIVE_TAPE;
@@ -176,8 +147,7 @@ public class ElectricEye {
         streamCamera = StreamCamera.VISION_POST_PROCESSING;
         cameraServer = CameraServer.getInstance();
         cameraServer.addServer("Stream");
-        cvSource = cameraServer.putVideo("output", 960, 540);
-
+        cvSource = cameraServer.putVideo("output", 320, 240);
 
 
         videoCaptureB = new VideoCapture();
@@ -185,7 +155,10 @@ public class ElectricEye {
         /* TODO: Network tables too slow, implement TCP comms
 
 */
+        videoCaptureA.read(matA);
+        if(videoCaptureB.isOpened()){
 
+        }
         if(shouldRun){
             try {
                 while(!initCameras()){
@@ -197,38 +170,55 @@ public class ElectricEye {
 //				time to actually process the acquired images
                 //timer = new Timer("Processing Timer");
                 //timer.scheduleAtFixedRate(mTimerTask, 0, 31);
+                videoCaptureA.read(matA);
+                if(videoCaptureB.isOpened()){
+                    videoCaptureB.read(matB);
+                }
+                else{
+                    matB = matA;
+                }
+
                 while(!isEitherCaptureNull() && videoCaptureA.isOpened()){
                     if(processCamera.cameraID == streamCamera.cameraID){
                         //matA = new Mat();
-                        videoCaptureA.read(matA);
-                        processImage(matA);
-                        streamImage(matA);
-                        if(processCamera.getIsFlipped()){
-                            //matA.release();
-                        }
+                        acquisitionThreadA = new Thread(getImageA(videoCaptureA));
+                        acquisitionThreadA.run();
+                        processThread = new Thread(processImage(matA));
+                        processThread.run();
+                        streamThread = new Thread(streamImage(matA));
+                        streamThread.run();
+
+                        processThread.join();
+                        streamThread.join();
+                        matA.release();
+                        acquisitionThreadA.join();
+
 
                     }
                     else{
-                        //matA = new Mat();
-                        videoCaptureA.read(matA);
-                        //System.out.println("After read");
-                        processImage(matA);
+                        acquisitionThreadA = new Thread(getImageA(videoCaptureA));
+                        acquisitionThreadA.run();
+                        processThread = new Thread(processImage(matA));
+                        processThread.run();
                         //System.out.println("after process");
                         if(streamCamera != StreamCamera.VISION_POST_PROCESSING){
-                            //System.out.println("lol whut");
-                            matB = new Mat();
-                            videoCaptureB.read(matB);
-                            streamImage(matB);
-                            // matB.release();
+                            acquisitionThreadB = new Thread(getImageB(videoCaptureB));
+                            acquisitionThreadB.run();
+                            streamThread = new Thread(streamImage(matB));
+                            streamThread.run();
                         }
                         else{
-                            streamImage(overlayInfo(matA));
-                            //System.out.println("after stream process");
+                            streamThread = new Thread(streamImage(overlayInfo(matA)));
+                            streamThread.run();
                         }
-                        if(processCamera.getIsFlipped()){
-                            //matA.release();
+                        streamThread.join();
+                        processThread.join();
+                        matA.release();
+                        acquisitionThreadA.join();
+                        if(streamCamera != StreamCamera.VISION_POST_PROCESSING){
+                            matB.release();
+                            acquisitionThreadB.join();
                         }
-
                     }
                 }
 
@@ -243,27 +233,52 @@ public class ElectricEye {
         }
 
     }
-    public static void processImage(Mat matOriginal){
-        System.out.println("Processing Started, frame:" + frame);
+
+    public static Runnable getImageA(VideoCapture capture){
+        return new Runnable() {
+            @Override
+            public void run() {
+                capture.read(matA);
+            }
+        };
+    }
+
+    public static Runnable getImageB(VideoCapture capture){
+        return new Runnable() {
+            @Override
+            public void run() {
+                capture.read(matB);
+            }
+        };
+    }
+    public static Runnable processImage(Mat matOriginal){
+        return new Runnable() {
+            @Override
+            public void run() {
+               // System.out.println("Processing Started, frame:" + frame);
 
 //		only run for the specified time
-        Mat matFlipper = new Mat();
-        if(processCamera.getIsFlipped()){
-            Core.flip(matOriginal, matFlipper , 0);
-        }
-        else{
-            matFlipper = matOriginal;
-        }
+                Mat matFlipper = new Mat();
+                if(processCamera.getIsFlipped()){
+                    Core.flip(matOriginal, matFlipper , 0);
+                }
+                else{
+                    matFlipper = matOriginal;
+                }
 
-        //System.out.println("Hey I'm Processing Something!");
+                //System.out.println("Hey I'm Processing Something!");
 
-        if(visionMode.getFilter() != null && visionMode.getTargetExtractor() != null){
-            visionMode.getFilter().process(matFlipper);
-            ArrayList<Target> targets = visionMode.getTargetExtractor().processTargetInformation(visionMode.getFilter().getOutput(), processCamera.getCameraCalculationInformation(), processCamera.getCameraOffset());
-        }
-       // matFlipper.release();
-        //TODO:Send targets to robot
-        frame++;
+                if(visionMode.getFilter() != null && visionMode.getTargetExtractor() != null){
+                    visionMode.getFilter().process(matFlipper);
+                    ArrayList<Target> targets = visionMode.getTargetExtractor().processTargetInformation(visionMode.getFilter().getOutput(), processCamera.getCameraCalculationInformation(), processCamera.getCameraOffset());
+                }
+                // matFlipper.release();
+                //TODO:Send targets to robot
+                frame++;
+            }
+        };
+
+
     }
 
     public static void processWithPNP() {
@@ -275,8 +290,17 @@ public class ElectricEye {
         return matToOverlay;
     }
 
-    public static void streamImage(Mat matToStream){
-       cvSource.putFrame(matToStream);
+    public static Runnable streamImage(Mat matToStream){
+       return new Runnable() {
+           @Override
+           public void run() {
+               Mat streamMat = new Mat();
+               Size streamSize = new Size(320, 240);
+               Imgproc.resize(matToStream, streamMat, streamSize);
+               cvSource.putFrame(streamMat);
+               streamMat.release();
+           }
+       };
 
 
     }

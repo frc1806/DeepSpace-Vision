@@ -26,6 +26,7 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
 
     @Override
     public ArrayList<Target> processTargetInformation(ArrayList<MatOfPoint> outputFromFilter, CameraCalculationInformation cameraInfo, RigidTransform2d cameraOffset){
+        tapeStrips.clear();
         for(MatOfPoint contour: outputFromFilter){
             Point[]pointsInContour = contour.toArray();
             Point left = pointsInContour[0];
@@ -43,6 +44,10 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
                 }
             }
             tapeStrips.add(new PieceOfTape(left, top, right));
+        }
+
+        if(tapeStrips.size() > 0){
+            System.out.println("Found: " + tapeStrips.size() + " targets");
         }
 
         return new ArrayList<Target>();
