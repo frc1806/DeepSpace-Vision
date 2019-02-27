@@ -13,6 +13,6 @@ public class CargoTargetExtractor implements TargetExtractor {
 
     @Override
     public ArrayList<Target> processTargetInformation(ArrayList<MatOfPoint> outputFromFilter, CameraCalculationInformation cameraInfo, RigidTransform2d cameraOffset) {
-        return null;
+        return new ArrayList<>();
     }
 }

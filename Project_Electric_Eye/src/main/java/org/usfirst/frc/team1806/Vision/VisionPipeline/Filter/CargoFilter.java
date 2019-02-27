@@ -53,7 +53,7 @@ public class CargoFilter implements Filter {
 
 		// Step Blur0:
 		Mat blurInput = hsvThresholdOutput;
-		BlurType blurType = BlurType.get("Gaussian Blur");
+		BlurType blurType = BlurType.get("Box Blur");
 		double blurRadius = 2.702702702702702;
 		blur(blurInput, blurType, blurRadius, blurOutput);
 
@@ -307,6 +307,9 @@ public class CargoFilter implements Filter {
 	public void configureCamera(VideoCapture camera){
 		camera.set(Videoio.CAP_PROP_BRIGHTNESS, 0.5);
 		camera.set(Videoio.CAP_PROP_EXPOSURE, 0.5);
+		camera.set(Videoio.CAP_PROP_FPS, 30);
+		camera.set(Videoio.CAP_PROP_FRAME_WIDTH, 1920);
+		camera.set(Videoio.CAP_PROP_FRAME_HEIGHT, 1080);
 	}
 
 

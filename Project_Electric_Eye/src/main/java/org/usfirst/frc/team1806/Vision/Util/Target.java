@@ -1,18 +1,15 @@
 package org.usfirst.frc.team1806.Vision.Util;
 
 import com.google.gson.JsonObject;
+import org.usfirst.frc.team1806.Vision.VisionPipeline.TargetExtractor.ReflectiveTapeTarget.PieceOfTape;
 
 public class Target {
     private double distance;
     private double robotToTarget;
     private double targetHeadingOffset; // Always 0 if target doesn't have a heading i.e. Cargo
 
-    public Target(double distance, double robotToTarget, double targetHeadingOffset){
-        this.distance = distance;
-        this.robotToTarget = robotToTarget;
-        this.targetHeadingOffset = targetHeadingOffset;
-
-
+    public Target(PieceOfTape leftTarget, PieceOfTape rightTarget){
+        
     }
 
     public JsonObject getTargetJson(){

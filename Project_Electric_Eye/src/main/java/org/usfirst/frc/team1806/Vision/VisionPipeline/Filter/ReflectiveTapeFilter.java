@@ -27,12 +27,12 @@ public class ReflectiveTapeFilter implements Filter{
     public void process(Mat source0) {
         // Step Blur0:
         Mat blurInput = source0;
-        BlurType blurType = BlurType.get("Box Blur");
+       /* BlurType blurType = BlurType.get("Box Blur");
         double blurRadius = 5.538085255066387;
         blur(blurInput, blurType, blurRadius, blurOutput);
-
+*/
         // Step HSV_Threshold0:
-        Mat hsvThresholdInput = blurOutput;
+        Mat hsvThresholdInput = blurInput;
         double[] hsvThresholdHue = {25.899280575539567, 152.19964813695967};
         double[] hsvThresholdSaturation = {107.77877697841728, 255.0};
         double[] hsvThresholdValue = {60.202853288032834, 255.0};
@@ -56,7 +56,7 @@ public class ReflectiveTapeFilter implements Filter{
         double filterContoursMinVertices = 0.0;
         double filterContoursMinRatio = 0.0;
         double filterContoursMaxRatio = 7.0;
-        filterContours(filterContoursContours, filterContoursMinArea, filterContoursMinPerimeter, filterContoursMinWidth, filterContoursMaxWidth, filterContoursMinHeight, filterContoursMaxHeight, filterContoursSolidity, filterContoursMaxVertices, filterContoursMinVertices, filterContoursMinRatio, filterContoursMaxRatio, filterContoursOutput);
+        //filterContours(filterContoursContours, filterContoursMinArea, filterContoursMinPerimeter, filterContoursMinWidth, filterContoursMaxWidth, filterContoursMinHeight, filterContoursMaxHeight, filterContoursSolidity, filterContoursMaxVertices, filterContoursMinVertices, filterContoursMinRatio, filterContoursMaxRatio, filterContoursOutput);
 
     }
 
@@ -197,63 +197,19 @@ public class ReflectiveTapeFilter implements Filter{
     }
 
 
-    /**
-     * Filters out contours that do not meet certain criteria.
-     * @param inputContours is the input list of contours
-     * @param output is the the output list of contours
-     * @param minArea is the minimum area of a contour that will be kept
-     * @param minPerimeter is the minimum perimeter of a contour that will be kept
-     * @param minWidth minimum width of a contour
-     * @param maxWidth maximum width
-     * @param minHeight minimum height
-     * @param maxHeight maximimum height
-     * @param Solidity the minimum and maximum solidity of a contour
-     * @param minVertexCount minimum vertex Count of the contours
-     * @param maxVertexCount maximum vertex Count
-     * @param minRatio minimum ratio of width to height
-     * @param maxRatio maximum ratio of width to height
-     */
-    private void filterContours(List<MatOfPoint> inputContours, double minArea,
-                                double minPerimeter, double minWidth, double maxWidth, double minHeight, double
-                                        maxHeight, double[] solidity, double maxVertexCount, double minVertexCount, double
-                                        minRatio, double maxRatio, List<MatOfPoint> output) {
-        final MatOfInt hull = new MatOfInt();
-        output.clear();
-        //operation
-        for (int i = 0; i < inputContours.size(); i++) {
-            final MatOfPoint contour = inputContours.get(i);
-            final Rect bb = Imgproc.boundingRect(contour);
-            if (bb.width < minWidth || bb.width > maxWidth) continue;
-            if (bb.height < minHeight || bb.height > maxHeight) continue;
-            final double area = Imgproc.contourArea(contour);
-            if (area < minArea) continue;
-            if (Imgproc.arcLength(new MatOfPoint2f(contour.toArray()), true) < minPerimeter) continue;
-            Imgproc.convexHull(contour, hull);
-            MatOfPoint mopHull = new MatOfPoint();
-            mopHull.create((int) hull.size().height, 1, CvType.CV_32SC2);
-            for (int j = 0; j < hull.size().height; j++) {
-                int index = (int)hull.get(j, 0)[0];
-                double[] point = new double[] { contour.get(index, 0)[0], contour.get(index, 0)[1]};
-                mopHull.put(j, 0, point);
-            }
-            final double solid = 100 * area / Imgproc.contourArea(mopHull);
-            if (solid < solidity[0] || solid > solidity[1]) continue;
-            if (contour.rows() < minVertexCount || contour.rows() > maxVertexCount)	continue;
-            final double ratio = bb.width / (double)bb.height;
-            if (ratio < minRatio || ratio > maxRatio) continue;
-            output.add(contour);
-        }
-    }
 
     @Override
     public ArrayList<MatOfPoint> getOutput(){
-        return filterContoursOutput;
+        return findContoursOutput;
     }
 
     @Override
     public void configureCamera(VideoCapture camera){
         camera.set(Videoio.CAP_PROP_BRIGHTNESS, 0.0);
         camera.set(Videoio.CAP_PROP_EXPOSURE, 0.0);
+        camera.set(Videoio.CAP_PROP_FPS, 30);
+        //camera.set(Videoio.CAP_PROP_FRAME_WIDTH, 1920);
+        //camera.set(Videoio.CAP_PROP_FRAME_HEIGHT, 1080);
     }
 
 

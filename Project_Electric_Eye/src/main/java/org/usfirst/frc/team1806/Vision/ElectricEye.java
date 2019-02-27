@@ -7,6 +7,7 @@ import java.util.TimerTask;
 import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.MjpegServer;
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.networktables.NetworkTable;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
@@ -27,9 +28,10 @@ public class ElectricEye {
     private static Mat matA;
     private static Mat matB;
 
+
     public static boolean shouldRun = true;
 
-//    static NetworkTable table;
+    static NetworkTable table;
 
 
 
@@ -121,33 +123,45 @@ public class ElectricEye {
     private static VisionMode visionMode;
     private static ProcessCamera processCamera;
     private static StreamCamera streamCamera;
+    private static int frame = 0;
 
     private static Timer timer;
+
     private static TimerTask mTimerTask = new TimerTask() {
         @Override
         public void run() {
-            while(!isEitherCaptureNull() && videoCaptureA.isOpened()){
+           // System.out.println("start of loop");
+            if(!isEitherCaptureNull() && videoCaptureA.isOpened()){
                 if(processCamera.cameraID == streamCamera.cameraID){
-                    matA = new Mat();
+                    //matA = new Mat();
                     videoCaptureA.read(matA);
                     processImage(matA);
                     streamImage(matA);
-                    matA.release();
+                    if(processCamera.getIsFlipped()){
+                        //matA.release();
+                    }
+
                 }
                 else{
-                    matA = new Mat();
+                    //matA = new Mat();
                     videoCaptureA.read(matA);
+                    //System.out.println("After read");
                     processImage(matA);
+                    //System.out.println("after process");
                     if(streamCamera != StreamCamera.VISION_POST_PROCESSING){
+                        //System.out.println("lol whut");
                         matB = new Mat();
                         videoCaptureB.read(matB);
                         streamImage(matB);
-                        matB.release();
+                       // matB.release();
                     }
                     else{
                         streamImage(overlayInfo(matA));
+                        //System.out.println("after stream process");
                     }
-                    matA.release();
+                    if(processCamera.getIsFlipped()){
+                        //matA.release();
+                    }
 
                 }
             }
@@ -156,11 +170,15 @@ public class ElectricEye {
 
     public static void main(String[] args) {
         visionMode = VisionMode.MODE_REFLECTIVE_TAPE;
+        matA = new Mat();
+        matB = new Mat();
         processCamera = ProcessCamera.FORWARD;
         streamCamera = StreamCamera.VISION_POST_PROCESSING;
         cameraServer = CameraServer.getInstance();
         cameraServer.addServer("Stream");
-        cvSource = cameraServer.putVideo("output", 640, 480);
+        cvSource = cameraServer.putVideo("output", 960, 540);
+
+
 
         videoCaptureB = new VideoCapture();
         videoCaptureA = new VideoCapture();
@@ -175,9 +193,44 @@ public class ElectricEye {
                     Thread.sleep(3000);
                 }
                 System.out.println("Camera Initialization Successful!");
+                visionMode.getFilter().configureCamera(videoCaptureA);
 //				time to actually process the acquired images
-                timer = new Timer("Processing Timer");
-                timer.schedule(mTimerTask, 16);
+                //timer = new Timer("Processing Timer");
+                //timer.scheduleAtFixedRate(mTimerTask, 0, 31);
+                while(!isEitherCaptureNull() && videoCaptureA.isOpened()){
+                    if(processCamera.cameraID == streamCamera.cameraID){
+                        //matA = new Mat();
+                        videoCaptureA.read(matA);
+                        processImage(matA);
+                        streamImage(matA);
+                        if(processCamera.getIsFlipped()){
+                            //matA.release();
+                        }
+
+                    }
+                    else{
+                        //matA = new Mat();
+                        videoCaptureA.read(matA);
+                        //System.out.println("After read");
+                        processImage(matA);
+                        //System.out.println("after process");
+                        if(streamCamera != StreamCamera.VISION_POST_PROCESSING){
+                            //System.out.println("lol whut");
+                            matB = new Mat();
+                            videoCaptureB.read(matB);
+                            streamImage(matB);
+                            // matB.release();
+                        }
+                        else{
+                            streamImage(overlayInfo(matA));
+                            //System.out.println("after stream process");
+                        }
+                        if(processCamera.getIsFlipped()){
+                            //matA.release();
+                        }
+
+                    }
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -191,7 +244,7 @@ public class ElectricEye {
 
     }
     public static void processImage(Mat matOriginal){
-        System.out.println("Processing Started");
+        System.out.println("Processing Started, frame:" + frame);
 
 //		only run for the specified time
         Mat matFlipper = new Mat();
@@ -208,8 +261,13 @@ public class ElectricEye {
             visionMode.getFilter().process(matFlipper);
             ArrayList<Target> targets = visionMode.getTargetExtractor().processTargetInformation(visionMode.getFilter().getOutput(), processCamera.getCameraCalculationInformation(), processCamera.getCameraOffset());
         }
-        matFlipper.release();
+       // matFlipper.release();
         //TODO:Send targets to robot
+        frame++;
+    }
+
+    public static void processWithPNP() {
+        
     }
 
     public static Mat overlayInfo(Mat matToOverlay){
