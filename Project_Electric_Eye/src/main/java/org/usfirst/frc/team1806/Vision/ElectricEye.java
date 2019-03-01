@@ -8,8 +8,7 @@ import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.MjpegServer;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
+import org.opencv.core.*;
 import org.opencv.videoio.VideoCapture;
 
 import org.usfirst.frc.team1806.Vision.Util.*;
@@ -36,7 +35,7 @@ public class ElectricEye {
 
 
     public enum VisionMode{
-        MODE_REFLECTIVE_TAPE(new ReflectiveTapeFilter(), new ReflectiveTapeTargetExtractor()),
+        MODE_REFLECTIVE_TAPE(new TapeTestFilter(), new ReflectiveTapeTargetExtractor()),
         MODE_CARGO(new CargoFilter(), new CargoTargetExtractor()),
         NOT_TARGETING(null, null);
 
@@ -266,8 +265,39 @@ public class ElectricEye {
         frame++;
     }
 
-    public static void processWithPNP() {
-        
+    public static void processWithPNP(Mat matOriginal) {
+        Mat matFlipper = new Mat();
+        if(processCamera.getIsFlipped()){
+            Core.flip(matOriginal, matFlipper , 0);
+        }
+        else{
+            matFlipper = matOriginal;
+        }
+
+        if(visionMode.getFilter() != null && visionMode.getTargetExtractor() != null){
+            visionMode.getFilter().process(matFlipper);
+            ArrayList<Target> targets = visionMode.getTargetExtractor().processTargetInformation(visionMode.getFilter().getOutput(), processCamera.getCameraCalculationInformation(), processCamera.getCameraOffset());
+
+            MatOfPoint3f objPoints = new MatOfPoint3f(new Point3[]{new Point3(-5.938, 2.938, 0.0), new Point3(-4.063, 2.375, 0.0),
+            new Point3(-5.438, -2.938, 0.0), new Point3(-7.375, -2.500, 0.0), new Point3(3.938, 2.375, 0.0),
+            new Point3(5.875, 2.875, 0.0), new Point3(7.313, -2.500, 0.0), new Point3(5.375, -2.938, 0.0)});
+
+            /*
+                # Left target
+    (-5.938, 2.938, 0.0), # top left
+    (-4.063, 2.375, 0.0), # top right
+    (-5.438, -2.938, 0.0), # bottom left
+    (-7.375, -2.500, 0.0), # bottom right
+
+    # Right target
+    (3.938, 2.375, 0.0), # top left
+    (5.875, 2.875, 0.0), # top right
+    (7.313, -2.500, 0.0), # bottom left
+    (5.375, -2.938, 0.0), # bottom right
+             */
+        }
+
+
     }
 
     public static Mat overlayInfo(Mat matToOverlay){

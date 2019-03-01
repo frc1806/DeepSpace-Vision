@@ -12,6 +12,7 @@ import org.usfirst.frc.team1806.Vision.VisionPipeline.TargetExtractor.Reflective
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class ReflectiveTapeTargetExtractor implements TargetExtractor {
 
@@ -22,10 +23,11 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
     private ArrayList<PieceOfTape> tapeStrips = new ArrayList<>();
     private ArrayList<Target> bays = new ArrayList<>();
 
-    private boolean wasLastLeft = false;
 
     @Override
     public ArrayList<Target> processTargetInformation(ArrayList<MatOfPoint> outputFromFilter, CameraCalculationInformation cameraInfo, RigidTransform2d cameraOffset){
+        tapeStrips.clear();
+        bays.clear();
         for(MatOfPoint contour: outputFromFilter){
             Point[]pointsInContour = contour.toArray();
             Point left = pointsInContour[0];
@@ -44,10 +46,33 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
             }
             tapeStrips.add(new PieceOfTape(left, top, right));
         }
+        tapeStrips.sort(new sortByX());
 
-        return new ArrayList<Target>();
+        for(int i = 0; i < tapeStrips.size(); i += 2) {
+            System.out.println("SSS " + tapeStrips.get(i).mTapeType);
+            if(tapeStrips.get(i).mTapeType.equals(PieceOfTape.TapeType.LEFT) && tapeStrips.size() > i + 1) {
+                bays.add(new Target(tapeStrips.get(i), tapeStrips.get(i + 1)));
+            }
+            else {
+                i++;
+            }
+        }
+
+
+        System.out.println("tapeStrips: " + tapeStrips.size());
+        System.out.println("bays: " + bays.size());
+
+
+        return bays;
     }
 
+    class sortByX implements Comparator<PieceOfTape>
+    {
+        @Override
+        public int compare(PieceOfTape o1, PieceOfTape o2) {
+            return (int) (o1.getX() - o2.getX());
+        }
+    }
 
 
 }

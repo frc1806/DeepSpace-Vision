@@ -9,7 +9,7 @@ public class Target {
     private double targetHeadingOffset; // Always 0 if target doesn't have a heading i.e. Cargo
 
     public Target(PieceOfTape leftTarget, PieceOfTape rightTarget){
-        
+        System.out.println("AM i BeIng trashed?");
     }
 
     public JsonObject getTargetJson(){

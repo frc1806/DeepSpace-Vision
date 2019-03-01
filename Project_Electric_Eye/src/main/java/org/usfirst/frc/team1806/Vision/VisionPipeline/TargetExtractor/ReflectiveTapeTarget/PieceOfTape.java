@@ -17,20 +17,20 @@ public class PieceOfTape {
     private double leftLineDistance;
     private double rightLineDistance;
 
-    TapeType mTapeType = TapeType.UNKNOWN;
+    public TapeType mTapeType = TapeType.UNKNOWN;
 
     public PieceOfTape(Point left, Point top, Point right){
      leftLineDistance = Math.sqrt(Math.pow(top.x-left.x, 2)+ Math.pow(top.y - left.y, 2));
      if(left.y < right.y) {
          mTapeType = TapeType.LEFT;
-
+         System.out.println("POT left");
          mOuter = left;
          mTop = top;
          mInner = right;
-
      }
      else if (left.y > right.y){
          mTapeType = TapeType.RIGHT;
+         System.out.println("POT right");
 
          mOuter = right;
          mTop = top;
@@ -38,10 +38,13 @@ public class PieceOfTape {
      }
      else {
          mTapeType = TapeType.UNKNOWN;
+         System.out.println("POT unknown");
      }
     }
 
 
-
+    public double getX() {
+        return mOuter.x;
+    }
 
 }
