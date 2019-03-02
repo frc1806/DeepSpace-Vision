@@ -59,8 +59,8 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
         }
 
 
-        System.out.println("tapeStrips: " + tapeStrips.size());
-        System.out.println("bays: " + bays.size());
+       // System.out.println("tapeStrips: " + tapeStrips.size());
+       // System.out.println("bays: " + bays.size());
 
 
         return bays;

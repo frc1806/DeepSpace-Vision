@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import edu.wpi.cscore.CvSource;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.wpilibj.CircularBuffer;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.videoio.VideoCapture;
@@ -38,10 +39,12 @@ public class ElectricEye {
 
 
     protected static class ProcessThread implements Runnable {
-
+        SWATCircularBuffer runTimes = new SWATCircularBuffer(30);
         @Override
         public void run() {
+            int frame = 0;
             Boolean newProcImg = false;
+            double startTime = System.nanoTime();
             while (shouldRun) {
                 synchronized (newImageAStream) {
                     newProcImg = newImageAStream;
@@ -59,6 +62,12 @@ public class ElectricEye {
                             processImage(processMat);
                         }
                     processMat.release();
+                    runTimes.addLast(System.nanoTime() - startTime);
+                    frame ++;
+                    if(frame % 30 == 29){
+                        System.out.println("Processing FPS:" + 1000000000 / runTimes.getAverage());
+                    }
+                    startTime = System.nanoTime();
                 }
 
             }
@@ -125,7 +134,10 @@ public class ElectricEye {
 
         @Override
         public void run() {
+            int frame = 0;
             Boolean newStreamImage = false;
+            double startTime = System.nanoTime();
+            SWATCircularBuffer runTimes = new SWATCircularBuffer(5);
             while (shouldRun) {
                 synchronized (newImageB) {
                     newStreamImage = newImageB;
@@ -141,11 +153,17 @@ public class ElectricEye {
                     }
                         if (streamMat != null && !streamMat.empty()) {
                             Mat resizeMat = new Mat();
-                            Imgproc.resize(streamCamera == StreamCamera.VISION_POST_PROCESSING? overlayInfo(streamMat):streamMat, resizeMat, new Size(320,240));
+                            Imgproc.resize(streamCamera == StreamCamera.VISION_POST_PROCESSING? overlayInfo(streamMat):streamMat, resizeMat, Constants.K_STREAM_SIZE);
                             streamImage(resizeMat);
                             resizeMat.release();
                     }
                     streamMat.release();
+                        runTimes.addLast(System.nanoTime() - startTime);
+                        frame ++;
+                        if(frame % 30 == 29){
+                            System.out.println("Stream FPS:" + 1000000000/ runTimes.getAverage());
+                        }
+                        startTime = System.nanoTime();
                 }
             }
         }
@@ -336,7 +354,7 @@ public class ElectricEye {
         streamCamera = StreamCamera.FORWARD_FIXED;
         cameraServer = CameraServer.getInstance();
         cameraServer.addServer("Stream");
-        cvSource = cameraServer.putVideo("output", 960, 540);
+        cvSource = cameraServer.putVideo("output", 320, 240);
 
 
         videoCaptureB = new VideoCapture();
