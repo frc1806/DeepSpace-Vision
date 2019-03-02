@@ -143,6 +143,7 @@ public class ElectricEye {
                             Mat resizeMat = new Mat();
                             Imgproc.resize(streamCamera == StreamCamera.VISION_POST_PROCESSING? overlayInfo(streamMat):streamMat, resizeMat, new Size(320,240));
                             streamImage(resizeMat);
+                            resizeMat.release();
                     }
                     streamMat.release();
                 }
