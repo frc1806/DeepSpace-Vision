@@ -7,7 +7,6 @@ public class Target {
     private double distance;
     private double robotToTarget;
     private double targetHeadingOffset; // Always 0 if target doesn't have a heading i.e. Cargo
-    private double timestamp;
 
     public Target(PieceOfTape leftTarget, PieceOfTape rightTarget){
         System.out.println("AM i BeIng trashed?");
@@ -21,9 +20,9 @@ public class Target {
 
 
     public RigidTransform2d getTargetPosition(RigidTransform2d robotPosition){
-        double angleForConversion = robotPosition.getRotation().getDegrees() + 90 + robotToTarget;
-        double targetX = distance * Math.cos(angleForConversion);
-        double targetY = distance * Math.sin(angleForConversion);
+        double angleForConversion = robotPosition.getRotation().getDegrees() + robotToTarget;
+        double targetX = distance * Math.cos(Math.toRadians(angleForConversion));
+        double targetY = distance * Math.sin(Math.toRadians(angleForConversion));
         double targetHeading = robotPosition.getRotation().getDegrees() + robotToTarget + targetHeadingOffset ;
         return new RigidTransform2d(new Translation2d(targetX,targetY), new Rotation2d().fromDegrees(targetHeading));
     }
