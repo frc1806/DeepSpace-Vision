@@ -8,13 +8,28 @@ public class Target {
     private double robotToTarget;
     private double targetHeadingOffset; // Always 0 if target doesn't have a heading i.e. Cargo
 
+    public PieceOfTape getLeftTarget() {
+        return leftTarget;
+    }
+
+    public PieceOfTape getRightTarget() {
+        return rightTarget;
+    }
+
+    private PieceOfTape leftTarget, rightTarget;
     public Target(PieceOfTape leftTarget, PieceOfTape rightTarget){
-        System.out.println("AM i BeIng trashed?");
+        this.leftTarget = leftTarget;
+        this.rightTarget = rightTarget;
+        //System.out.println("AM i BeIng trashed?");
     }
 
     public JsonObject getTargetJson(){
         //TODO place into JSON
         return new JsonObject();
+    }
+
+    public int getMiddle() {
+        return (int) ((leftTarget.getmTop().x + rightTarget.getmTop().x) / 2);
     }
 
 

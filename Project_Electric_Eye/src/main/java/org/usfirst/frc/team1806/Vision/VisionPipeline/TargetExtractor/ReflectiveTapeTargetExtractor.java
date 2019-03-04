@@ -46,31 +46,48 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
             }
             tapeStrips.add(new PieceOfTape(left, top, right));
         }
-        tapeStrips.sort(new sortByX());
+        tapeStrips.sort(new TapeSortByX());
 
-        for(int i = 0; i < tapeStrips.size(); i += 2) {
-            System.out.println("SSS " + tapeStrips.get(i).mTapeType);
-            if(tapeStrips.get(i).mTapeType.equals(PieceOfTape.TapeType.LEFT) && tapeStrips.size() > i + 1) {
+        for(PieceOfTape strip:tapeStrips) {
+            /*System.out.println("inner (" + strip.getmInner().x + ", " + strip.getmInner().y + ")");
+            System.out.println("outer (" + strip.getmOuter().x + ", " + strip.getmOuter().y + ")");
+            System.out.println("top (" + strip.getmTop().x + ", " + strip.getmTop().y + ")");*/
+        }
+        int i = 0;
+        while( i < tapeStrips.size()) {
+            //System.out.println("SSS " + tapeStrips.get(i).mTapeType);
+            if(tapeStrips.get(i).mTapeType == PieceOfTape.TapeType.LEFT && tapeStrips.size() > i + 1) {
                 bays.add(new Target(tapeStrips.get(i), tapeStrips.get(i + 1)));
+                i+=2;
             }
             else {
                 i++;
             }
         }
 
-
+        /*
         System.out.println("tapeStrips: " + tapeStrips.size());
         System.out.println("bays: " + bays.size());
-
+        */
+        bays.sort(new BaySortByX());
+        if(bays.size() > 0){
+            System.out.println("height: " + Math.abs(bays.get(0).getLeftTarget().getmTop().y - bays.get(0).getLeftTarget().getmOuter().y));
+        }
 
         return bays;
     }
 
-    class sortByX implements Comparator<PieceOfTape>
+    class TapeSortByX implements Comparator<PieceOfTape>
     {
         @Override
         public int compare(PieceOfTape o1, PieceOfTape o2) {
-            return (int) (o1.getX() - o2.getX());
+            return (int) (o1.getmTop().x - o2.getmTop().x);
+        }
+    }class BaySortByX implements Comparator<Target>
+    {
+        @Override
+        public int compare(Target o1, Target o2) {
+            return o1.getMiddle() - o2.getMiddle();
         }
     }
 
