@@ -7,6 +7,7 @@ public class Target {
     private double distance;
     private double robotToTarget;
     private double targetHeadingOffset; // Always 0 if target doesn't have a heading i.e. Cargo
+    private double timestamp;
 
     public PieceOfTape getLeftTarget() {
         return leftTarget;
