@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: :wpiHal:">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/wpiHal.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

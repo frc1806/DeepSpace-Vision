@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27aaf935-9a94-4d88-9875-6201f0772069" name="Default Changelist" comment="" />
+    <list default="true" id="57b8dd69-a3e3-458d-bac6-c928063a2097" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.0/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___cameraserver_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___cscore_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___ntcore_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___opencv_344_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___wpiHal_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___wpilibj_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___wpiutil_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/java-multiCameraServer.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/java-multiCameraServer.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$CameraConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$CameraConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$ConnectThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$ConnectThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$ReceiveThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$ReceiveThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$SwitchedCameraConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$SwitchedCameraConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$WriteThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main$WriteThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ElectricEye/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Util/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Util/Target.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/VisionPipeline/TargetExtractor/Common/CameraMath.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/VisionPipeline/TargetExtractor/Common/CameraMath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape$TapeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape$TapeType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/java-multiCameraServer-shadow.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/java-multiCameraServer-shadow.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/java-multiCameraServer-shadow.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/java-multiCameraServer-shadow.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/java-multiCameraServer.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/java-multiCameraServer.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/java-multiCameraServer.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/java-multiCameraServer.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/java-multiCameraServer-all.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/java-multiCameraServer-all.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/java-multiCameraServer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/java-multiCameraServer.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ElectricEye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ElectricEye/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/Target.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/ReflectiveTapeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/ReflectiveTapeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,24 +66,42 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/ReflectiveTapePipeline.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#780#781#0" expanded="true" />
-                <element signature="e#810#811#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ElectricEye/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="524" column="8" selection-start-line="524" selection-start-column="8" selection-end-line="524" selection-end-column="8" />
+            <state relative-caret-position="306">
+              <caret line="88" column="103" selection-start-line="88" selection-start-column="103" selection-end-line="88" selection-end-column="103" />
+              <folding>
+                <element signature="e#3737#3768#0" expanded="true" />
+                <element signature="e#3928#3959#0" expanded="true" />
+                <element signature="e#6007#6052#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/ReflectiveTapePipeline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/ReflectiveTapeFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-238">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/cameraserver.jar!/edu/wpi/first/vision/VisionThread.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,76 +110,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ElectricEye/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/CargoTargetExtractor.java">
+        <entry file="jar://$PROJECT_DIR$/cameraserver.jar!/edu/wpi/first/vision/VisionRunner.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/TargetExtractor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/TapeTestFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/ReflectiveTapeFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-733">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="697">
+              <caret line="95" column="67" selection-start-line="95" selection-start-column="67" selection-end-line="95" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -122,63 +130,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Util/Target.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            <state relative-caret-position="266">
+              <caret line="57" column="178" selection-start-line="57" selection-start-column="178" selection-end-line="57" selection-end-column="178" />
+              <folding>
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/CameraCalculationInformation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+              <folding>
+                <element signature="e#1043#1044#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="64" column="82" selection-start-line="64" selection-start-column="82" selection-end-line="64" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1233#1234#0" expanded="true" />
+                <element signature="e#1273#1274#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>public static void</find>
-    </findStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Constants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Messages/VisionMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Messages/UnknownTypeMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Messages/HeartbeatMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/CameraCalculationInformation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Interpolable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/SWATCircularBuffer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Translation2d.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Twist2d.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Util.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/RigidTransform2d.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Rotation2d.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Messages/TargetsMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/Filter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/CargoFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/TargetExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/CargoTargetExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Target.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/ElectricEye/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/ReflectiveTapePipeline.java" />
-        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/TapeTestFilter.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util/Target.java" />
+        <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/ReflectiveTapeFilter.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="793" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
     <option name="width" value="814" />
     <option name="height" value="867" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,12 +303,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551935188625" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552011268312" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -298,26 +323,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="java-multiCameraServer [build]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+    <configuration name="C:/Users/SWAT/Desktop/DeepSpace-Vision/java-multiCameraServer [build]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -342,16 +348,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="27aaf935-9a94-4d88-9875-6201f0772069" name="Default Changelist" comment="" />
-      <created>1551924646140</created>
+      <changelist id="57b8dd69-a3e3-458d-bac6-c928063a2097" name="Default Changelist" comment="" />
+      <created>1552004599398</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1551924646140</updated>
+      <updated>1552004599398</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -363,10 +370,10 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.09421265" />
+      <window_info anchor="bottom" id="Build" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32974428" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -387,15 +394,15 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="3" weight="0.09421265" />
+      <window_info anchor="bottom" id="Build" order="3" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" visible="true" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -412,101 +419,17 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Messages/VisionMessage.java">
+    <entry file="jar://$PROJECT_DIR$/cameraserver.jar!/edu/wpi/first/vision/VisionRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        <state relative-caret-position="119">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Messages/UnknownTypeMessage.java">
+    <entry file="jar://$PROJECT_DIR$/cameraserver.jar!/edu/wpi/first/vision/VisionThread.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Messages/HeartbeatMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/CameraCalculationInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Interpolable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SWATCircularBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Translation2d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Twist2d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/RigidTransform2d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Rotation2d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Messages/TargetsMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/Filter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/CargoFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        <state relative-caret-position="253">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -515,105 +438,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTarget/PieceOfTape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/CargoTargetExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="263">
+          <caret line="64" column="82" selection-start-line="64" selection-start-column="82" selection-end-line="64" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1233#1234#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Target.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/CameraCalculationInformation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/TargetExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="391">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ElectricEye/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-733">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ElectricEye/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="524" column="8" selection-start-line="524" selection-start-column="8" selection-end-line="524" selection-end-column="8" />
+        <state relative-caret-position="306">
+          <caret line="88" column="103" selection-start-line="88" selection-start-column="103" selection-end-line="88" selection-end-column="103" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3737#3768#0" expanded="true" />
+            <element signature="e#3928#3959#0" expanded="true" />
+            <element signature="e#6007#6052#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/Common/CameraMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/ReflectiveTapePipeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+        <state relative-caret-position="85">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Target.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="57" column="178" selection-start-line="57" selection-start-column="178" selection-end-line="57" selection-end-column="178" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#780#781#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/TapeTestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/Filter/ReflectiveTapeFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-238">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/VisionPipeline/TargetExtractor/ReflectiveTapeTargetExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="95" column="67" selection-start-line="95" selection-start-column="67" selection-end-line="95" selection-end-column="67" />
         </state>
       </provider>
     </entry>

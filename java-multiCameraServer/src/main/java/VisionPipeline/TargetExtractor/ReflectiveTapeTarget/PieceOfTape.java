@@ -1,5 +1,6 @@
 package VisionPipeline.TargetExtractor.ReflectiveTapeTarget;
 
+import Util.CameraCalculationInformation;
 import org.opencv.core.Point;
 
 public class PieceOfTape {
@@ -53,6 +54,15 @@ public class PieceOfTape {
 
     public Point getmInner() {
         return mInner;
+    }
+
+    public double getOuterToTopHeight(){
+        return mOuter.y - mTop.y;
+    }
+
+    public double getDistance(){
+        double height = getOuterToTopHeight();
+        return 3875.46567547210361226462* Math.pow(height,-0.97957530188343977517);
     }
 
 

@@ -68,10 +68,11 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
         System.out.println("tapeStrips: " + tapeStrips.size());
         System.out.println("bays: " + bays.size());
         */
-        bays.sort(new BaySortByX());
-        if(bays.size() > 0){
-            System.out.println("height: " + Math.abs(bays.get(0).getLeftTarget().getmTop().y - bays.get(0).getLeftTarget().getmOuter().y));
+        bays.sort(new TargetSortByDistance());
+        if(!bays.isEmpty()){
+            System.out.println(bays.get(0).toString());
         }
+
 
         return bays;
     }
@@ -88,6 +89,11 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
         public int compare(Target o1, Target o2) {
             return o1.getMiddle() - o2.getMiddle();
         }
+    }
+
+    class TargetSortByDistance implements Comparator<Target>{
+        @Override
+        public int compare(Target o1, Target o2) {return Double.compare(o1.getDistance(), o2.getDistance());}
     }
 
 

@@ -35,7 +35,7 @@ public class ReflectiveTapeFilter implements Filter {
         Mat hsvThresholdInput = blurInput;
         double[] hsvThresholdHue = {45.899280575539567, 140.19964813695967};
         double[] hsvThresholdSaturation = {150.77877697841728, 255.0};
-        double[] hsvThresholdValue = {25.202853288032834, 255.0};
+        double[] hsvThresholdValue = {10.202853288032834, 255.0};
         hsvThreshold(hsvThresholdInput, hsvThresholdHue, hsvThresholdSaturation, hsvThresholdValue, hsvThresholdOutput);
 
         // Step Find_Contours0:

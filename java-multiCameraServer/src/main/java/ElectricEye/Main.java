@@ -20,6 +20,7 @@ import Messages.HeartbeatMessage;
 import Messages.TargetsMessage;
 import Messages.UnknownTypeMessage;
 import Messages.VisionMessage;
+import Util.CameraCalculationInformation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -85,7 +86,7 @@ import org.opencv.core.Mat;
 
 public final class Main {
   private static String configFile = "/boot/frc.json";
-
+  public static CameraCalculationInformation cameraInfo = new CameraCalculationInformation(960, 544, 53.0);
   public static ArrayList<Target> targets;
   public static double lastRIOHeartBeatTimestamp;
   public static double lastRIOHeartBeatPiTime;

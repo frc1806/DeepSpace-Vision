@@ -10,7 +10,7 @@ public class CameraMath {
      * @param cameraInfo the informaiton about the camera that allows for more accurate angle calculations.
      * @return the angle to the pixel.
      */
-    public static double getHorizontalAngleToPixel(int pixel, CameraCalculationInformation cameraInfo){
-        return Math.toDegrees(Math.atan((cameraInfo.getHorizontalResolution()-pixel)/cameraInfo.getFocalLength()));
+    public static double getHorizontalAngleToPixel(double pixel, CameraCalculationInformation cameraInfo){
+        return Math.toDegrees(Math.atan((pixel - (cameraInfo.getHorizontalResolution()/2))/cameraInfo.getFocalLength()));
     }
 }

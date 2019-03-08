@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: :ntcore:">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/ntcore.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

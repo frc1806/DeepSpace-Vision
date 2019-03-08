@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: :cscore:">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/cscore.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
