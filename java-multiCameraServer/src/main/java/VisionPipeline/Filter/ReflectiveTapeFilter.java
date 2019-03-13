@@ -12,6 +12,7 @@ import org.opencv.videoio.Videoio;
 public class ReflectiveTapeFilter implements Filter {
 
     private Mat blurOutput = new Mat();
+    private Mat rgbThresholdOutput = new Mat();
     private Mat hsvThresholdOutput = new Mat();
     public ArrayList<MatOfPoint> findContoursOutput = new ArrayList<MatOfPoint>();
     public ArrayList<MatOfPoint> filterContoursOutput = new ArrayList<MatOfPoint>();
@@ -27,19 +28,19 @@ public class ReflectiveTapeFilter implements Filter {
     public void process(Mat source0) {
         // Step Blur0:
         Mat blurInput = source0;
-       /* BlurType blurType = BlurType.get("Box Blur");
-        double blurRadius = 5.538085255066387;
-        blur(blurInput, blurType, blurRadius, blurOutput);
-*/
-        // Step HSV_Threshold0:
-        Mat hsvThresholdInput = blurInput;
-        double[] hsvThresholdHue = {45.899280575539567, 140.19964813695967};
-        double[] hsvThresholdSaturation = {150.77877697841728, 255.0};
-        double[] hsvThresholdValue = {10.202853288032834, 255.0};
-        hsvThreshold(hsvThresholdInput, hsvThresholdHue, hsvThresholdSaturation, hsvThresholdValue, hsvThresholdOutput);
+       BlurType blurType = BlurType.get("Gaussian Blur");
+        double blurRadius = 1.0;
+        //blur(blurInput, blurType, blurRadius, blurOutput);
+
+// Step RGB_Threshold0:
+        Mat rgbThresholdInput = blurInput;
+        double[] rgbThresholdRed = {0.0, 72.0};
+        double[] rgbThresholdGreen = {25.0, 255.0};
+        double[] rgbThresholdBlue = {0.0, 79.0};
+        rgbThreshold(rgbThresholdInput, rgbThresholdRed, rgbThresholdGreen, rgbThresholdBlue, rgbThresholdOutput);
 
         // Step Find_Contours0:
-        Mat findContoursInput = hsvThresholdOutput;
+        Mat findContoursInput = rgbThresholdOutput;
         boolean findContoursExternalOnly = false;
         findContours(findContoursInput, findContoursExternalOnly, findContoursOutput);
 
@@ -175,6 +176,21 @@ public class ReflectiveTapeFilter implements Filter {
     }
 
     /**
+     * Segment an image based on color ranges.
+     * @param input The image on which to perform the RGB threshold.
+     * @param red The min and max red.
+     * @param green The min and max green.
+     * @param blue The min and max blue.
+     * @param output The image in which to store the output.
+     */
+    private void rgbThreshold(Mat input, double[] red, double[] green, double[] blue,
+                              Mat out) {
+        Imgproc.cvtColor(input, out, Imgproc.COLOR_BGR2RGB);
+        Core.inRange(out, new Scalar(red[0], green[0], blue[0]),
+                new Scalar(red[1], green[1], blue[1]), out);
+    }
+
+    /**
      * Sets the values of pixels in a binary image to their distance to the nearest black pixel.
      * @param input The image on which to perform the Distance Transform.
      * @param type The Transform.
@@ -208,6 +224,7 @@ public class ReflectiveTapeFilter implements Filter {
         camera.set(Videoio.CAP_PROP_BRIGHTNESS, 0.0);
         camera.set(Videoio.CAP_PROP_EXPOSURE, 0.0);
         camera.set(Videoio.CAP_PROP_FPS, 30);
+
         //camera.set(Videoio.CAP_PROP_FRAME_WIDTH, 1920);
         //camera.set(Videoio.CAP_PROP_FRAME_HEIGHT, 1080);
     }

@@ -42,6 +42,12 @@ public class PieceOfTape {
          mTapeType = TapeType.UNKNOWN;
          //System.out.println("Tape unknown");
      }
+     if(mTapeType != TapeType.UNKNOWN){
+         double distance = getDistance();
+         if(distance > 150 || distance < 10){
+             mTapeType = TapeType.UNKNOWN;
+         }
+     }
     }
 
     public Point getmOuter() {

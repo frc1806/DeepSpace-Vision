@@ -26,20 +26,53 @@ public class ReflectiveTapeTargetExtractor implements TargetExtractor {
         bays.clear();
         for(MatOfPoint contour: outputFromFilter){
             Point[]pointsInContour = contour.toArray();
+            ArrayList<Point> leftPoints = new ArrayList<Point>();
+            ArrayList<Point> topPoints = new ArrayList<Point>();
+            ArrayList<Point> rightPoints = new ArrayList<Point>();
             Point left = pointsInContour[0];
             Point top = pointsInContour[0];
             Point right = pointsInContour[0];
             for(Point point:pointsInContour){
                 if(point.x < left.x){
                     left = point;
+                    leftPoints.clear();
+                    leftPoints.add(point);
+                }
+                else if (point.x == left.x){
+                    leftPoints.add(point);
                 }
                 if(point.x > right.x){
                     right = point;
+                    rightPoints.clear();
+                    rightPoints.add(point);
+                }
+                else if (point.x == right.x){
+                    rightPoints.add(point);
                 }
                 if(point.y < top.y){
                     top = point;
+                    topPoints.clear();
+                    topPoints.add(point);
+                }
+                else if (point.y == top.y){
+                    topPoints.add(point);
                 }
             }
+            double leftTotalY = 0;
+            for(Point point:leftPoints){
+                leftTotalY += point.y;
+            }
+            double rightTotalY = 0;
+            for(Point point:rightPoints){
+                rightTotalY += point.y;
+            }
+            double topTotalX = 0;
+            for(Point point:topPoints){
+                topTotalX += point.x;
+            }
+            left = new Point(left.x, leftTotalY/leftPoints.size());
+            top = new Point(topTotalX / topPoints.size(), top.y);
+            right = new Point(right.x, rightTotalY/rightPoints.size());
             PieceOfTape proposedPieceOfTape = new PieceOfTape(left, top, right);
             if(proposedPieceOfTape.mTapeType != PieceOfTape.TapeType.UNKNOWN){
                 tapeStrips.add(proposedPieceOfTape);

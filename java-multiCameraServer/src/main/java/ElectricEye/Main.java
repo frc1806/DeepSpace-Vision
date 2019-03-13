@@ -95,7 +95,7 @@ public final class Main {
   public static Double imageTimestamp = 0.0;
   public static boolean shouldRun = true;
   public static Socket mSocket;
-  public static Boolean mConnected;
+  public static Boolean mConnected = false;
   private static ConnectThread mConnThread;
   private static WriteThread mWriteThread;
   private static ReceiveThread mReceiveThread;
@@ -344,6 +344,7 @@ public final class Main {
       cameras.add(startCamera(config));
     }
 
+
     // start switched cameras
     for (SwitchedCameraConfig config : switchedCameraConfigs) {
       startSwitchedCamera(config);
@@ -364,7 +365,6 @@ public final class Main {
        */
       visionThread.start();
     }
-
     // loop forever
     for (;;) {
       try {
